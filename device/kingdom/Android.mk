@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2014 Modding.MyMind http://forum.xda-developers.com/member.php?u=5537766
+# Copyright (C) 2014 ModdingMyMind https://github.com/ModdingMyMind
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +15,9 @@
 # limitations under the License.
 #
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    htc.audio.alt.enable=0 \
-    htc.audio.hac.enable=1
+LOCAL_PATH := $(call my-dir)
+
+ifeq ($(TARGET_DEVICE),kingdom)
+    include $(call first-makefiles-under,$(LOCAL_PATH))
+endif
+

@@ -27,3 +27,5 @@ add_lunch_combo cm_kingdom-eng
 add_lunch_combo cm_kingdom-userdebug
 add_lunch_combo baked_kingdom-eng
 add_lunch_combo baked_kingdom-userdebug
+add_lunch_combo omni_kingdom-eng
+add_lunch_combo omni_kingdom-userdebug
