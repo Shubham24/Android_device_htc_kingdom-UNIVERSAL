@@ -26,13 +26,26 @@
 
 # Htc Evo Design 4g / Kindom Tree.. by Dm47021
 
+# Optimalizations
+
+
 USE_CAMERA_STUB := true
+
+ARCH_ARM_HIGH_OPTIMIZATION := true
+ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
+TARGET_USE_O3 := true
+
+# TLS Register
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+
 
 # inherit from common msm7x30
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/htc/kingdom/BoardConfigVendor.mk
+TARGET_RECOVERY_FSTAB = device/htc/kingdom/prebuilt/root/fstab.kingdom
 
 # Board Settings
 TARGET_BOOTLOADER_BOARD_NAME := kingdom
@@ -40,6 +53,8 @@ BOARD_MKBOOTIMG_ARGS := 0x6200000
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x05000000
 BOARD_KERNEL_PAGE_SIZE := 4096
+
+TARGET_DISABLE_ARM_PIE := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 827731968
@@ -66,7 +81,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -march=armv7-a
 # Some Common CFLAGS
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DSCREEN_RELEASE -DREFRESH_RATE=60 -DICS_CAMERA_BLOB -DRIL_VERSION_2_SUPPORT -DQCOM_NO_SECURE_PLAYBACK
 
-# Qualcomm Shit
+# Qualcomm Stuff
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := kingdom
 BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
@@ -109,8 +124,8 @@ TARGET_RELETARGET_ARCH_VERSION :=ASETOOLS_EXTENSIONS := device/htc/common
 
 # Kernel Defines
 TARGET_KERNEL_SOURCE := kernel/htc/kingdom/prebuilt/root 
-TARGET_KERNEL_CONFIG := defconfig
-KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/toolchain/arm-eabi-4.4.3/bin/arm-eabi-BUILD_KERNEL := true
+TARGET_KERNEL_CONFIG := cyanogenmod_defconfig
+KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/toolchain/arm-eabi-4.4.4t/bin/arm-eabi-BUILD_KERNEL := true
 
 #TARGET_PREBUILT_KERNEL := device/htc/kingdom/prebuilt/root/kernel
 
