@@ -1,5 +1,5 @@
 ## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/cdma.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := kingdom
@@ -9,6 +9,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/kingdom/device_kingdom.mk)
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_kingdom BUILD_ID=KRT16M BUILD_FINGERPRINT=htc_us/htc_kingdom/vivo:4.4.4/KRT16M/87995:user/release-keys PRIVATE_BUILD_DESC="4.4.4 Goku123 KingdomKat release-keys"
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kingdom
