@@ -51,6 +51,7 @@ TARGET_RECOVERY_FSTAB = device/htc/kingdom/prebuilt/root/fstab.kingdom
 TARGET_BOOTLOADER_BOARD_NAME := kingdom
 BOARD_MKBOOTIMG_ARGS := 0x6200000
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x05000000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
@@ -92,11 +93,11 @@ TARGET_PROVIDES_LIBLIGHTS := true
 # Ril
 BOARD_USES_LEGACY_RIL := true
 
-# Htc Shit
+# Htc Stuff
 BOARD_HAVE_HTC_FFC := true
 BOARD_USE_REVERSE_FFC := true
 
-# Audio Shit
+# Audio Stuff
 BOARD_PREBUILT_LIBAUDIO := false
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := false
 BOARD_USES_QCOM_AUDIO_RESETALL := false
