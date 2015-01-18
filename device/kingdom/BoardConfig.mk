@@ -161,7 +161,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 HAVE_SELINUX := true
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/htc/vivo/sepolicy
+    device/htc/kingom/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     app.te \
