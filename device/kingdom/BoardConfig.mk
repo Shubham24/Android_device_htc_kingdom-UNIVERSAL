@@ -53,6 +53,7 @@ BOARD_MKBOOTIMG_ARGS := 0x6200000
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x05000000
 BOARD_KERNEL_PAGE_SIZE := 4096
+BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88 androidboot.selinux=permissive
 
 TARGET_DISABLE_ARM_PIE := true
 
@@ -158,6 +159,35 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # For 4.3+
 HAVE_SELINUX := true
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/htc/vivo/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    app.te \
+    bluetooth.te \
+    device.te \
+    domain.te \
+    drmserver.te \
+    file_contexts \
+    files \
+    file.te \
+    hci_init.te \
+    healthd.te \
+    init.te \
+    init_shell.te \
+    keystore.te \
+    kickstart.te \
+    mediaserver.te \
+    rild.te \
+    surfaceflinger.te \
+    system.te \
+    ueventd.te \
+    untrusted_app.te \
+    vold.te \
+    wpa.te \
+    wpa_socket.te
+
 
 # TWRP Specific
 DEVICE_RESOLUTION := 540x960
