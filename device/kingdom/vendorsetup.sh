@@ -21,8 +21,9 @@
 # function: add_lunch_combo generic-eng
 
 # ADD Lunch Combo Here
-add_lunch_combo htc_kingdom-userdebug
-add_lunch_combo htc_kingdom-eng
+# UnComment the Ones You Need. 
+#add_lunch_combo htc_kingdom-userdebug
+#add_lunch_combo htc_kingdom-eng
 add_lunch_combo cm_kingdom-eng
 add_lunch_combo cm_kingdom-userdebug
 add_lunch_combo baked_kingdom-eng
