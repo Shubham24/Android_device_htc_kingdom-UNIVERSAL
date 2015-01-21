@@ -125,7 +125,7 @@ TARGET_RELETARGET_ARCH_VERSION :=ASETOOLS_EXTENSIONS := device/htc/common
 
 # Kernel Defines
 TARGET_KERNEL_SOURCE := kernel/htc/kingdom/
-TARGET_KERNEL_CONFIG := cyanogenmod_kingdom_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_kingdom_defconfig
 KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/toolchain/arm-eabi-4.4.4t/bin/arm-eabi-BUILD_KERNEL := true
 
 #TARGET_PREBUILT_KERNEL := device/htc/kingdom/prebuilt/root/kernel
