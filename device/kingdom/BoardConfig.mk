@@ -22,6 +22,12 @@
 
 # Htc Evo Design 4g / Kindom Tree.. 
 
+# inherit from common msm7x30
+-include device/htc/msm7x30-common/BoardConfigCommon.mk
+
+# inherit from the proprietary version
+-include vendor/htc/kingdom/BoardConfigVendor.mk
+
 # Board Settings
 TARGET_BOOTLOADER_BOARD_NAME := kingdom
 TARGET_NO_BOOTLOADER := true
@@ -75,8 +81,8 @@ TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 
 
 # Kernel Defines
-#TARGET_KERNEL_SOURCE := kernel/htc/kingdom/prebuilt/root 
-#TARGET_KERNEL_CONFIG := defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/msm7x30 
+TARGET_KERNEL_CONFIG := kingdom_defconfig
 #KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 #BUILD_KERNEL := true
 
@@ -102,7 +108,10 @@ HAVE_SELINUX := true
 DEVICE_RESOLUTION := 540x960
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_FLASH_FROM_STORAGE := true
-
+TW_THEME := portrait_mdpi
+TW_INCLUDE_CRYPTO := true
+TW_NO_SCREEN_BLANK := true
+TW_INCLUDE_DUMLOCK := true
 #TW_INTERNAL_STORAGE_PATH := "/internal_sdcard"
 #TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sdcard"
 TW_EXTERNAL_STORAGE_PATH := "/sdcard"
