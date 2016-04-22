@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit from our custom product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, vendor/cm/config/common.mk)
@@ -25,6 +28,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # Really only needed if attempting to build CM or other custom Roms
 # In this case we are merely building a custom recovery
 $(call inherit-product-if-exists, vendor/htc/kingdom/kingdom-vendor.mk)
+
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
+TARGET_BOOTANIMATION_HALF_RES := true
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
